@@ -1,0 +1,19 @@
+{{template "header"}}
+    <h3> List Data Buku</h3>
+    <h5><a href="/form">+ Tambah Data</a></h5>
+    <table border=1>
+        <th>Judul</th>
+        <th>Harga</th>
+        <th>Path Gambar</th>
+        <th colspan=2>Aksi</th>
+        {{range .Data}}
+            <tr>
+                <td>{{.Judul}}</td>
+                <td>{{.Harga}}</td>
+                <td>{{.Path}}</td>
+                <td><a href="/edit?id={{.Idbuku}}">Edit</a></td>
+                <td><a href="/hapus?id={{.Idbuku}}">Hapus</a></td>
+            </tr>
+        {{end}}  
+    </table>
+{{template "footer"}}

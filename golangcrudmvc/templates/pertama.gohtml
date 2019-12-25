@@ -1,0 +1,16 @@
+{{template "header"}}
+  <link rel="stylesheet" type="text/css" href="/styles/list.css">
+        <div class="main-div">
+                {{range .Data}}
+                        <div class="box1">
+                                <b>{{.Judul}}</b>
+                                <div>
+                                        <img src="{{.Path}}" />
+                                </div>
+                                <div>
+                                        <b>Rp.{{.Harga}}</b>
+                                </div>
+                        </div>
+                {{end}}
+        </div>
+{{template "footer"}}

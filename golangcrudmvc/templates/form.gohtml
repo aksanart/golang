@@ -1,0 +1,32 @@
+{{template "header"}}
+    <h3> Masukkan Data Buku </h3>
+    <table>
+        <form action="/proses" method="POST" enctype="multipart/form-data">
+            <tr>
+                <td>Judul</td>
+                <td>:</td>
+                <td><input type="text" name="judul" {{if .Judul}} value="{{.Judul}}"{{end}}/></td>
+            </tr> 
+            <tr></tr>
+            <tr>
+                <td>Harga</td>
+                <td>:</td>
+                <td><input type="number" name="harga" {{if .Harga}} value="{{.Harga}}" {{end}}/></td>
+            </tr>    
+            <tr></tr>
+            <tr>
+                <td>Gambar</td>
+                <td>:</td>
+                <td><input type="file" name="path" /></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><input type="submit" /></td>
+            </tr>
+            <tr>
+                <td><input type="hidden" name="id" {{if .Idbuku}} value="{{.Idbuku}}"{{end}}/></td>
+                <td><input type="hidden" name="alreadyPath" {{if .Path}} value="{{.Path}}"{{end}}/></td>
+            </tr>
+        </form>
+    </table>
+{{template "footer"}}

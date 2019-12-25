@@ -1,0 +1,44 @@
+{{template "header"}}
+    <!-- post rest -->
+    <h3>Post Rest</h3>
+    <form action="/restPost" method="POST">    
+        <p>url rest: localhost:8085/restPost</p>
+        <table>
+            <tr>
+                <td>username: &nbsp;</td>
+                <td><input type="text" name="postUsername" /></td>
+            </tr>
+            <tr>
+                <td>key: &nbsp;</td>
+                <td><input type="text" name="postKey" /></td>
+            </tr>
+            <tr>
+                <td><button OnClcik="ajaxsend()" >Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <!-- end post rest -->
+
+    <!-- list data rest-->
+    <hr/>
+    <h3> List User-Key </h3>
+    <h4><a href="/formRest" >Tambah data User Rest</a></h4>
+    <table border=1>
+        <th>Username</th>
+        <th>Key</th>
+        <th>Hash</th>
+        <th colspan=2>Aksi</th>
+        {{range .Data}}
+            <tr>
+                <td>{{.Username}}</td>
+                <td>{{.Key}}</td>
+                <td>{{.Hash}}</td>
+                <td><a href="/formRest?id={{.IdUser}}">Edit</a></td>
+                <td><a href="/userRestHapus?id={{.IdUser}}">Hapus</a></td>
+            </tr>
+        {{end}}  
+    </table>
+    <!-- end list data -->
+
+   
+{{template "footer"}}

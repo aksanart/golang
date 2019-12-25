@@ -1,0 +1,28 @@
+ {{template "header"}}
+ <!-- form add data user rest -->
+    <hr/>
+    <h3>Add user rest</h3>
+    <table>
+        <form action="/addRest" method="POST">
+            <tr>
+                <td>Username</td>
+                <td>:</td>
+                <td><input type="text" name="addUsername" {{if .Username}} value="{{.Username}}" {{end}} /></td>
+            </tr>
+            <tr>
+                <td>Key-authentication</td>
+                <td>:</td>
+                <td><input type="text" name="addKey" {{if .Key}}  value="{{.Key}}" {{end}}/></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="id_edit"  {{if .IdUser}} value="{{.IdUser}}" {{end}}/>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" /></td>
+            </tr>
+        </form>
+    </table>
+    <!-- end form user rest -->
+{{template "footer"}}
